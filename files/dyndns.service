@@ -1,0 +1,10 @@
+[Unit]
+Description=Update public IP in cloudflare for dyndns
+Wants=dyndns.timer
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /opt/update_public_ip.py
+
+[Install]
+WantedBy=multi-user.target
